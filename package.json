@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Eazyed/PdfResizer/issues"
   },
-  "homepage": "https://github.com/Eazyed/PdfResizer#readme"
+  "homepage": "https://github.com/Eazyed/PdfResizer#readme",
+  "dependencies": {
+    "sharp": "^0.28.1"
+  }
 }
