@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Eazyed/PdfResizer#readme",
   "dependencies": {
+    "mysql": "^2.18.1",
     "sharp": "^0.28.2"
   }
 }
