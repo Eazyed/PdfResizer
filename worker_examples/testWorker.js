@@ -1,7 +1,5 @@
 const { parentPort, workerData } = require('worker_threads');
 const fs = require('fs');
-const { worker } = require('cluster');
-const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
