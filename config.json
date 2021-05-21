@@ -5,7 +5,10 @@
         "jpg"
     ],
     "foldersToExplore": [
-        "./examples",
-        "C:/Users/etien/Pictures/Images Projet JS"
-    ]
+        "C:/temp/worker1/",
+        "C:/temp/worker2/",
+        "C:/temp/worker3/"
+    ],
+    "pathToTrash": "C:/temp/trash/",
+    "pathToResult": "C:/temp/result/"
 }
