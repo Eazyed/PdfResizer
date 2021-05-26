@@ -30,7 +30,7 @@ async function run() {
                     console.log("[" + workerData.name + "]" + file);
                     const metadata_path = `${folderpath}${fileRootName}.metadata`;
                     // Lecture du fichier metadata
-                    fs.readFile(`${folderpath}${fileRootName}.metadata`, 'utf8' , (err, data) => {
+                    fs.readFile(metadata_path, 'utf8' , (err, data) => {
                         if (err) {
                           console.error(err);
                           return
