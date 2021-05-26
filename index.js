@@ -22,7 +22,7 @@ var con = mysql.createConnection({
         shell.question("Entrez un mot clé : ", (keyword) => {
             console.log(`Vous avez entré le mot clé ${keyword}`);
             keyword = `%${keyword}%`;
-            var sql = 'SELECT image_path FROM projects WHERE metadata like ? ';
+            var sql = 'SELECT image_path FROM images WHERE metadata like ? ';
             con.query(sql, [keyword], function (err, result) {
                 if (err) throw err;
                 console.log(result);
