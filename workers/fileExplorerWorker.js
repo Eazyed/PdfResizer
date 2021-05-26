@@ -29,6 +29,7 @@ async function run() {
                     let image_resized_path=`${CONFIG.pathToResult}${fileRootName}_resized.${fileExtension}`;
                     console.log("[" + workerData.name + "]" + file);
                     const metadata_path = `${folderpath}${fileRootName}.metadata`;
+                    const image_path = `${folderpath}${fileRootName}.${fileExtension}`;
                     // Lecture du fichier metadata
                     fs.readFile(metadata_path, 'utf8' , (err, data) => {
                         if (err) {
@@ -38,8 +39,27 @@ async function run() {
                         console.log(data);
                         metadata = data;
 
-                        // RESIZE DE L IMAGE ET DEPLACEMENT VERS image_resized_path  
+                        // RESIZE DE L IMAGE ET DEPLACEMENT VERS image_resized_path 
+                        sharp(image_path)
+                            .resize({
+                                height:CONFIG.heightResized,
+                                width:CONFIG.widthResized
+                            })
+                            .toFile(image_resized_path)
+                            .then(() => {
+                            });
                         
+                        // Suppression de l'image de base
+                        fs.unlink(image_path, (err) => {
+                            if (err) {
+                                console.error(err)
+                                return
+                            }                          
+                            //file removed
+                        })
+
+                        console.log(`${file} resized and moved to new folder`)
+
                         // Insertion en base
                         var sql = 'INSERT INTO images (image_path,metadata) VALUES (?,?)';
                         con.query(sql, [image_resized_path,metadata], function (err, result) {

@@ -10,5 +10,7 @@
         "C:/temp/worker3/"
     ],
     "pathToTrash": "C:/temp/trash/",
-    "pathToResult": "C:/temp/result/"
+    "pathToResult": "C:/temp/result/",
+    "widthResized": 400,
+    "heightResized": 300
 }
